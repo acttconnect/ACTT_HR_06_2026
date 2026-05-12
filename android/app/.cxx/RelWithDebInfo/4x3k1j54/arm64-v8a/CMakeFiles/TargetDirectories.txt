@@ -1,0 +1,2 @@
+C:/Users/yashs/StudioProjects/briio_application-main/android/app/.cxx/RelWithDebInfo/4x3k1j54/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/yashs/StudioProjects/briio_application-main/android/app/.cxx/RelWithDebInfo/4x3k1j54/arm64-v8a/CMakeFiles/rebuild_cache.dir

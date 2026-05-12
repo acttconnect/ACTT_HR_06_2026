@@ -1,0 +1,945 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D34F8FD92CEC577000D29FA5 /* pinghrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F8FD82CEC577000D29FA5 /* pinghrApp.swift */; };
+		D34F8FDB2CEC577000D29FA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F8FDA2CEC577000D29FA5 /* ContentView.swift */; };
+		D34F8FDD2CEC577100D29FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34F8FDC2CEC577100D29FA5 /* Assets.xcassets */; };
+		D34F8FE12CEC577100D29FA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34F8FE02CEC577100D29FA5 /* Preview Assets.xcassets */; };
+		D34F8FEB2CEC577100D29FA5 /* pinghrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F8FEA2CEC577100D29FA5 /* pinghrTests.swift */; };
+		D34F8FF52CEC577100D29FA5 /* pinghrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F8FF42CEC577100D29FA5 /* pinghrUITests.swift */; };
+		D34F8FF72CEC577100D29FA5 /* pinghrUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F8FF62CEC577100D29FA5 /* pinghrUITestsLaunchTests.swift */; };
+		D34F900A2CEC590E00D29FA5 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34F90092CEC590E00D29FA5 /* AuthenticationServices.framework */; };
+		D34F900D2CEC590E00D29FA5 /* AccountAuthenticationModificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F900C2CEC590E00D29FA5 /* AccountAuthenticationModificationViewController.swift */; };
+		D34F90102CEC590E00D29FA5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D34F900F2CEC590E00D29FA5 /* Base */; };
+		D34F90142CEC590E00D29FA5 /* Ping Hr.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D34F90072CEC590E00D29FA5 /* Ping Hr.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D34F901E2CEC59B200D29FA5 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34F90092CEC590E00D29FA5 /* AuthenticationServices.framework */; };
+		D34F90212CEC59B200D29FA5 /* AccountAuthenticationModificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F90202CEC59B200D29FA5 /* AccountAuthenticationModificationViewController.swift */; };
+		D34F90242CEC59B200D29FA5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D34F90232CEC59B200D29FA5 /* Base */; };
+		D34F90282CEC59B200D29FA5 /* PingHr.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D34F901D2CEC59B200D29FA5 /* PingHr.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D34F8FE72CEC577100D29FA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D34F8FCD2CEC577000D29FA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D34F8FD42CEC577000D29FA5;
+			remoteInfo = pinghr;
+		};
+		D34F8FF12CEC577100D29FA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D34F8FCD2CEC577000D29FA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D34F8FD42CEC577000D29FA5;
+			remoteInfo = pinghr;
+		};
+		D34F90122CEC590E00D29FA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D34F8FCD2CEC577000D29FA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D34F90062CEC590E00D29FA5;
+			remoteInfo = "Ping Hr";
+		};
+		D34F90262CEC59B200D29FA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D34F8FCD2CEC577000D29FA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D34F901C2CEC59B200D29FA5;
+			remoteInfo = PingHr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D34F90182CEC590E00D29FA5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D34F90282CEC59B200D29FA5 /* PingHr.appex in Embed Foundation Extensions */,
+				D34F90142CEC590E00D29FA5 /* Ping Hr.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D34F8FD52CEC577000D29FA5 /* pinghr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinghr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D34F8FD82CEC577000D29FA5 /* pinghrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinghrApp.swift; sourceTree = "<group>"; };
+		D34F8FDA2CEC577000D29FA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D34F8FDC2CEC577100D29FA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D34F8FDE2CEC577100D29FA5 /* pinghr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pinghr.entitlements; sourceTree = "<group>"; };
+		D34F8FE02CEC577100D29FA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D34F8FE62CEC577100D29FA5 /* pinghrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pinghrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D34F8FEA2CEC577100D29FA5 /* pinghrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinghrTests.swift; sourceTree = "<group>"; };
+		D34F8FF02CEC577100D29FA5 /* pinghrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pinghrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D34F8FF42CEC577100D29FA5 /* pinghrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinghrUITests.swift; sourceTree = "<group>"; };
+		D34F8FF62CEC577100D29FA5 /* pinghrUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinghrUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D34F90072CEC590E00D29FA5 /* Ping Hr.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ping Hr.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D34F90092CEC590E00D29FA5 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		D34F900C2CEC590E00D29FA5 /* AccountAuthenticationModificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAuthenticationModificationViewController.swift; sourceTree = "<group>"; };
+		D34F900F2CEC590E00D29FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D34F90112CEC590E00D29FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D34F901D2CEC59B200D29FA5 /* PingHr.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PingHr.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D34F90202CEC59B200D29FA5 /* AccountAuthenticationModificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAuthenticationModificationViewController.swift; sourceTree = "<group>"; };
+		D34F90232CEC59B200D29FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D34F90252CEC59B200D29FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D34F8FD22CEC577000D29FA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F8FE32CEC577100D29FA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F8FED2CEC577100D29FA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F90042CEC590E00D29FA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D34F900A2CEC590E00D29FA5 /* AuthenticationServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F901A2CEC59B200D29FA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D34F901E2CEC59B200D29FA5 /* AuthenticationServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D34F8FCC2CEC577000D29FA5 = {
+			isa = PBXGroup;
+			children = (
+				D34F8FD72CEC577000D29FA5 /* pinghr */,
+				D34F8FE92CEC577100D29FA5 /* pinghrTests */,
+				D34F8FF32CEC577100D29FA5 /* pinghrUITests */,
+				D34F900B2CEC590E00D29FA5 /* Ping Hr */,
+				D34F901F2CEC59B200D29FA5 /* PingHr */,
+				D34F90082CEC590E00D29FA5 /* Frameworks */,
+				D34F8FD62CEC577000D29FA5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D34F8FD62CEC577000D29FA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D34F8FD52CEC577000D29FA5 /* pinghr.app */,
+				D34F8FE62CEC577100D29FA5 /* pinghrTests.xctest */,
+				D34F8FF02CEC577100D29FA5 /* pinghrUITests.xctest */,
+				D34F90072CEC590E00D29FA5 /* Ping Hr.appex */,
+				D34F901D2CEC59B200D29FA5 /* PingHr.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D34F8FD72CEC577000D29FA5 /* pinghr */ = {
+			isa = PBXGroup;
+			children = (
+				D34F8FD82CEC577000D29FA5 /* pinghrApp.swift */,
+				D34F8FDA2CEC577000D29FA5 /* ContentView.swift */,
+				D34F8FDC2CEC577100D29FA5 /* Assets.xcassets */,
+				D34F8FDE2CEC577100D29FA5 /* pinghr.entitlements */,
+				D34F8FDF2CEC577100D29FA5 /* Preview Content */,
+			);
+			path = pinghr;
+			sourceTree = "<group>";
+		};
+		D34F8FDF2CEC577100D29FA5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D34F8FE02CEC577100D29FA5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D34F8FE92CEC577100D29FA5 /* pinghrTests */ = {
+			isa = PBXGroup;
+			children = (
+				D34F8FEA2CEC577100D29FA5 /* pinghrTests.swift */,
+			);
+			path = pinghrTests;
+			sourceTree = "<group>";
+		};
+		D34F8FF32CEC577100D29FA5 /* pinghrUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D34F8FF42CEC577100D29FA5 /* pinghrUITests.swift */,
+				D34F8FF62CEC577100D29FA5 /* pinghrUITestsLaunchTests.swift */,
+			);
+			path = pinghrUITests;
+			sourceTree = "<group>";
+		};
+		D34F90082CEC590E00D29FA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D34F90092CEC590E00D29FA5 /* AuthenticationServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D34F900B2CEC590E00D29FA5 /* Ping Hr */ = {
+			isa = PBXGroup;
+			children = (
+				D34F900C2CEC590E00D29FA5 /* AccountAuthenticationModificationViewController.swift */,
+				D34F900E2CEC590E00D29FA5 /* MainInterface.storyboard */,
+				D34F90112CEC590E00D29FA5 /* Info.plist */,
+			);
+			path = "Ping Hr";
+			sourceTree = "<group>";
+		};
+		D34F901F2CEC59B200D29FA5 /* PingHr */ = {
+			isa = PBXGroup;
+			children = (
+				D34F90202CEC59B200D29FA5 /* AccountAuthenticationModificationViewController.swift */,
+				D34F90222CEC59B200D29FA5 /* MainInterface.storyboard */,
+				D34F90252CEC59B200D29FA5 /* Info.plist */,
+			);
+			path = PingHr;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D34F8FD42CEC577000D29FA5 /* pinghr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D34F8FFA2CEC577100D29FA5 /* Build configuration list for PBXNativeTarget "pinghr" */;
+			buildPhases = (
+				D34F8FD12CEC577000D29FA5 /* Sources */,
+				D34F8FD22CEC577000D29FA5 /* Frameworks */,
+				D34F8FD32CEC577000D29FA5 /* Resources */,
+				D34F90182CEC590E00D29FA5 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D34F90132CEC590E00D29FA5 /* PBXTargetDependency */,
+				D34F90272CEC59B200D29FA5 /* PBXTargetDependency */,
+			);
+			name = pinghr;
+			productName = pinghr;
+			productReference = D34F8FD52CEC577000D29FA5 /* pinghr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D34F8FE52CEC577100D29FA5 /* pinghrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D34F8FFD2CEC577100D29FA5 /* Build configuration list for PBXNativeTarget "pinghrTests" */;
+			buildPhases = (
+				D34F8FE22CEC577100D29FA5 /* Sources */,
+				D34F8FE32CEC577100D29FA5 /* Frameworks */,
+				D34F8FE42CEC577100D29FA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D34F8FE82CEC577100D29FA5 /* PBXTargetDependency */,
+			);
+			name = pinghrTests;
+			productName = pinghrTests;
+			productReference = D34F8FE62CEC577100D29FA5 /* pinghrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D34F8FEF2CEC577100D29FA5 /* pinghrUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D34F90002CEC577100D29FA5 /* Build configuration list for PBXNativeTarget "pinghrUITests" */;
+			buildPhases = (
+				D34F8FEC2CEC577100D29FA5 /* Sources */,
+				D34F8FED2CEC577100D29FA5 /* Frameworks */,
+				D34F8FEE2CEC577100D29FA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D34F8FF22CEC577100D29FA5 /* PBXTargetDependency */,
+			);
+			name = pinghrUITests;
+			productName = pinghrUITests;
+			productReference = D34F8FF02CEC577100D29FA5 /* pinghrUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D34F90062CEC590E00D29FA5 /* Ping Hr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D34F90152CEC590E00D29FA5 /* Build configuration list for PBXNativeTarget "Ping Hr" */;
+			buildPhases = (
+				D34F90032CEC590E00D29FA5 /* Sources */,
+				D34F90042CEC590E00D29FA5 /* Frameworks */,
+				D34F90052CEC590E00D29FA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ping Hr";
+			productName = "Ping Hr";
+			productReference = D34F90072CEC590E00D29FA5 /* Ping Hr.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D34F901C2CEC59B200D29FA5 /* PingHr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D34F90292CEC59B200D29FA5 /* Build configuration list for PBXNativeTarget "PingHr" */;
+			buildPhases = (
+				D34F90192CEC59B200D29FA5 /* Sources */,
+				D34F901A2CEC59B200D29FA5 /* Frameworks */,
+				D34F901B2CEC59B200D29FA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PingHr;
+			productName = PingHr;
+			productReference = D34F901D2CEC59B200D29FA5 /* PingHr.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D34F8FCD2CEC577000D29FA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					D34F8FD42CEC577000D29FA5 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					D34F8FE52CEC577100D29FA5 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = D34F8FD42CEC577000D29FA5;
+					};
+					D34F8FEF2CEC577100D29FA5 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = D34F8FD42CEC577000D29FA5;
+					};
+					D34F90062CEC590E00D29FA5 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					D34F901C2CEC59B200D29FA5 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = D34F8FD02CEC577000D29FA5 /* Build configuration list for PBXProject "pinghr" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D34F8FCC2CEC577000D29FA5;
+			productRefGroup = D34F8FD62CEC577000D29FA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D34F8FD42CEC577000D29FA5 /* pinghr */,
+				D34F8FE52CEC577100D29FA5 /* pinghrTests */,
+				D34F8FEF2CEC577100D29FA5 /* pinghrUITests */,
+				D34F90062CEC590E00D29FA5 /* Ping Hr */,
+				D34F901C2CEC59B200D29FA5 /* PingHr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D34F8FD32CEC577000D29FA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D34F8FE12CEC577100D29FA5 /* Preview Assets.xcassets in Resources */,
+				D34F8FDD2CEC577100D29FA5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F8FE42CEC577100D29FA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F8FEE2CEC577100D29FA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F90052CEC590E00D29FA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D34F90102CEC590E00D29FA5 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F901B2CEC59B200D29FA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D34F90242CEC59B200D29FA5 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D34F8FD12CEC577000D29FA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D34F8FDB2CEC577000D29FA5 /* ContentView.swift in Sources */,
+				D34F8FD92CEC577000D29FA5 /* pinghrApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F8FE22CEC577100D29FA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D34F8FEB2CEC577100D29FA5 /* pinghrTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F8FEC2CEC577100D29FA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D34F8FF72CEC577100D29FA5 /* pinghrUITestsLaunchTests.swift in Sources */,
+				D34F8FF52CEC577100D29FA5 /* pinghrUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F90032CEC590E00D29FA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D34F900D2CEC590E00D29FA5 /* AccountAuthenticationModificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F90192CEC59B200D29FA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D34F90212CEC59B200D29FA5 /* AccountAuthenticationModificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D34F8FE82CEC577100D29FA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D34F8FD42CEC577000D29FA5 /* pinghr */;
+			targetProxy = D34F8FE72CEC577100D29FA5 /* PBXContainerItemProxy */;
+		};
+		D34F8FF22CEC577100D29FA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D34F8FD42CEC577000D29FA5 /* pinghr */;
+			targetProxy = D34F8FF12CEC577100D29FA5 /* PBXContainerItemProxy */;
+		};
+		D34F90132CEC590E00D29FA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D34F90062CEC590E00D29FA5 /* Ping Hr */;
+			targetProxy = D34F90122CEC590E00D29FA5 /* PBXContainerItemProxy */;
+		};
+		D34F90272CEC59B200D29FA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D34F901C2CEC59B200D29FA5 /* PingHr */;
+			targetProxy = D34F90262CEC59B200D29FA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D34F900E2CEC590E00D29FA5 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D34F900F2CEC590E00D29FA5 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		D34F90222CEC59B200D29FA5 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D34F90232CEC59B200D29FA5 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D34F8FF82CEC577100D29FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D34F8FF92CEC577100D29FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		D34F8FFB2CEC577100D29FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = pinghr/pinghr.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"pinghr/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ping Hr";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = trials.pinghr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D34F8FFC2CEC577100D29FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = pinghr/pinghr.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"pinghr/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ping Hr";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = trials.pinghr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D34F8FFE2CEC577100D29FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = trials.pinghrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pinghr.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/pinghr";
+			};
+			name = Debug;
+		};
+		D34F8FFF2CEC577100D29FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = trials.pinghrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pinghr.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/pinghr";
+			};
+			name = Release;
+		};
+		D34F90012CEC577100D29FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = trials.pinghrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = pinghr;
+			};
+			name = Debug;
+		};
+		D34F90022CEC577100D29FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = trials.pinghrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = pinghr;
+			};
+			name = Release;
+		};
+		D34F90162CEC590E00D29FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ping Hr/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Ping Hr";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "trials.pinghr.Ping-Hr";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D34F90172CEC590E00D29FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ping Hr/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Ping Hr";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "trials.pinghr.Ping-Hr";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D34F902A2CEC59B200D29FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PingHr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PingHr;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = trials.pinghr.PingHr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D34F902B2CEC59B200D29FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PingHr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PingHr;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = trials.pinghr.PingHr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D34F8FD02CEC577000D29FA5 /* Build configuration list for PBXProject "pinghr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D34F8FF82CEC577100D29FA5 /* Debug */,
+				D34F8FF92CEC577100D29FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D34F8FFA2CEC577100D29FA5 /* Build configuration list for PBXNativeTarget "pinghr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D34F8FFB2CEC577100D29FA5 /* Debug */,
+				D34F8FFC2CEC577100D29FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D34F8FFD2CEC577100D29FA5 /* Build configuration list for PBXNativeTarget "pinghrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D34F8FFE2CEC577100D29FA5 /* Debug */,
+				D34F8FFF2CEC577100D29FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D34F90002CEC577100D29FA5 /* Build configuration list for PBXNativeTarget "pinghrUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D34F90012CEC577100D29FA5 /* Debug */,
+				D34F90022CEC577100D29FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D34F90152CEC590E00D29FA5 /* Build configuration list for PBXNativeTarget "Ping Hr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D34F90162CEC590E00D29FA5 /* Debug */,
+				D34F90172CEC590E00D29FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D34F90292CEC59B200D29FA5 /* Build configuration list for PBXNativeTarget "PingHr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D34F902A2CEC59B200D29FA5 /* Debug */,
+				D34F902B2CEC59B200D29FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D34F8FCD2CEC577000D29FA5 /* Project object */;
+}
