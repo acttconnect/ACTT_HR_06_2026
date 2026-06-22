@@ -14,12 +14,14 @@ import 'package:employeeattendance/HomePage/notification_screen.dart';
 import 'package:employeeattendance/HomePage/today_screen.dart';
 import 'package:employeeattendance/PayrollPage/payroll_screen.dart';
 import 'package:employeeattendance/class/constants.dart';
-import 'package:employeeattendance/controller/globalvariable.dart';
-import 'package:employeeattendance/controller/location.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
+import 'package:employeeattendance/controllers/location.dart';
 import 'package:employeeattendance/model/birthday_model.dart';
 import 'package:employeeattendance/model/events_data.dart';
 import 'package:employeeattendance/model/rewardmodel.dart';
 import 'package:employeeattendance/model/auth_controller.dart';
+import 'package:employeeattendance/widgets/AttendanceMethodsSection/attendance_methods_section.dart';
+import 'package:employeeattendance/widgets/dashboard_hero_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -208,19 +210,21 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         _buildGreetingHeader(),
         const SizedBox(height: 14),
 
-        // Check-in card
+        // Dashboard Hero
         _AnimatedSection(
-            controller: _cardsController,
-            delay: 0.0,
-            child: _buildPunchInCard()),
-        const SizedBox(height: 14),
+          controller: _cardsController,
+          delay: 0.0,
+          child: const DashboardHeroV2(),
+        ),
+        const SizedBox(height: 16),
 
-        // Quick actions
+// Attendance Methods
         _AnimatedSection(
-            controller: _cardsController,
-            delay: 0.1,
-            child: _buildQuickActions()),
-        const SizedBox(height: 14),
+          controller: _cardsController,
+          delay: 0.1,
+          child: const AttendanceMethodsSection(),
+        ),
+        const SizedBox(height: 16),
 
         // News & Updates
         _AnimatedSection(
