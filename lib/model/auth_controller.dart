@@ -1,5 +1,5 @@
 import 'package:employeeattendance/HomePage/main_screen.dart';
-import 'package:employeeattendance/controller/globalvariable.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
 import 'package:employeeattendance/HomePage/home_screen.dart';
 import 'package:employeeattendance/login_screen.dart';
 import 'package:get/get.dart';

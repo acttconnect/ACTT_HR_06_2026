@@ -4,7 +4,7 @@ import 'package:employeeattendance/class/constants.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:employeeattendance/controller/globalvariable.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
 
 class Login {
   static Future<bool> getLogin(
@@ -20,18 +20,24 @@ class Login {
         GlobalVariable.uid = data['data']['id'];
         GlobalVariable.checkInStatus = data['data']['checkin_status'];
         GlobalVariable.checkOutStatus = data['data']['checkout_status'];
-        GlobalVariable.checkIn = data['data']['checkin_time']?.toString() ?? "--:--";
-        GlobalVariable.checkOut = data['data']['checkout_time']?.toString() ?? "--:--";
+        GlobalVariable.checkIn =
+            data['data']['checkin_time']?.toString() ?? "--:--";
+        GlobalVariable.checkOut =
+            data['data']['checkout_time']?.toString() ?? "--:--";
         GlobalVariable.lastUsage = data['data']['last_uses']?.toString() ?? "";
         GlobalVariable.name = data["data"]["name"]?.toString() ?? "";
-        GlobalVariable.designation = data['data']['designation']?.toString() ?? "";
+        GlobalVariable.designation =
+            data['data']['designation']?.toString() ?? "";
         GlobalVariable.number = data['data']['number']?.toString() ?? "";
         GlobalVariable.email = data['data']['email']?.toString() ?? "";
         GlobalVariable.image = data['data']['image']?.toString() ?? "";
-        GlobalVariable.department = data['data']['department']?.toString() ?? "";
+        GlobalVariable.department =
+            data['data']['department']?.toString() ?? "";
         GlobalVariable.empID = data['data']['empid']?.toString() ?? "";
-        GlobalVariable.permanentAdd = data['data']['permanent_add']?.toString() ?? "";
-        final branchDetails = data['data']['branch_details'] as Map<String, dynamic>?;
+        GlobalVariable.permanentAdd =
+            data['data']['permanent_add']?.toString() ?? "";
+        final branchDetails =
+            data['data']['branch_details'] as Map<String, dynamic>?;
         GlobalVariable.branch = branchDetails?['name']?.toString() ??
             data['data']['branch_allocated']?.toString();
         GlobalVariable.joiningDate = data['data']['date_of_join']?.toString();

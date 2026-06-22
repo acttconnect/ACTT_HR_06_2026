@@ -4,7 +4,7 @@ import 'package:employeeattendance/class/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
-import '../controller/globalvariable.dart';
+import '../controllers/globalvariable.dart';
 import '../model/notification_model.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
@@ -58,11 +58,19 @@ class _NotificationScreenState extends State<NotificationScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white, size: 20),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen(),));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MainScreen(),
+                ));
           },
         ),
         backgroundColor: Colors.blue.shade900,
-        title: const Text('Notification', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+        title: const Text('Notification',
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold)),
       ),
       body: SafeArea(
         child: Padding(
@@ -82,7 +90,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               child: SlideAnimation(
                                 verticalOffset: 50.0,
                                 child: FadeInAnimation(
-                                  child: notificationCard(snapshot, size, index),
+                                  child:
+                                      notificationCard(snapshot, size, index),
                                 ),
                               ),
                             );
@@ -103,7 +112,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
         children: [
           const Icon(Icons.notifications_off, size: 80, color: Colors.blue),
           const SizedBox(height: 10),
-          Text('No Notifications Yet', style: xLargeLightText.copyWith(color: Colors.blue.shade900)),
+          Text('No Notifications Yet',
+              style: xLargeLightText.copyWith(color: Colors.blue.shade900)),
         ],
       ),
     );
@@ -139,7 +149,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   children: [
                     Text(
                       item[index].msg!,
-                      style: largeText.copyWith(fontWeight: FontWeight.bold, color: Colors.blue.shade900),
+                      style: largeText.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue.shade900),
                     ),
                     const SizedBox(height: 2),
                     Text(

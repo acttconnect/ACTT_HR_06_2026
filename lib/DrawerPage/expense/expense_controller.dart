@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:employeeattendance/class/constants.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import '../../controller/globalvariable.dart';
+import '../../controllers/globalvariable.dart';
 import 'package:http/http.dart' as http;
 
 class ExpenseController extends GetxController {

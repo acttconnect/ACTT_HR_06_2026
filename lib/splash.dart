@@ -2,7 +2,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:employeeattendance/class/login.dart';
-import 'package:employeeattendance/controller/globalvariable.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 

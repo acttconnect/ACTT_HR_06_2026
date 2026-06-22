@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
-import 'controller/globalvariable.dart';
+import 'controllers/globalvariable.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -152,7 +152,8 @@ class _LoginScreenState extends State<LoginScreen>
         GlobalVariable.empID = userData['empid']?.toString() ?? "";
         GlobalVariable.permanentAdd =
             userData['permanent_add']?.toString() ?? "";
-        final branchDetails = userData['branch_details'] as Map<String, dynamic>?;
+        final branchDetails =
+            userData['branch_details'] as Map<String, dynamic>?;
         GlobalVariable.branch = branchDetails?['name']?.toString() ??
             userData['branch_allocated']?.toString();
         GlobalVariable.joiningDate = userData['date_of_join']?.toString();

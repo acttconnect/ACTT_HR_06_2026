@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
-import '../controller/globalvariable.dart';
+import '../controllers/globalvariable.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Downloads extends StatefulWidget {
@@ -53,7 +53,8 @@ class _DownloadsState extends State<Downloads> {
         OpenFile.open(path);
         return path;
       } else {
-        throw Exception('Failed to download document. Status code: ${response.statusCode}');
+        throw Exception(
+            'Failed to download document. Status code: ${response.statusCode}');
       }
     } catch (e) {
       Fluttertoast.showToast(msg: 'Download failed: $e');
@@ -73,7 +74,11 @@ class _DownloadsState extends State<Downloads> {
           onPressed: () => Get.back(),
         ),
         centerTitle: true,
-        title: const Text("Downloads", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+        title: const Text("Downloads",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold)),
         elevation: 1,
         backgroundColor: Colors.blue.shade900,
         iconTheme: const IconThemeData(color: Colors.white),
@@ -92,17 +97,21 @@ class _DownloadsState extends State<Downloads> {
                   : FutureBuilder<DownloadModel>(
                       future: getDownloads(),
                       builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.waiting) {
-                          return const SpinKitCircle(color: Colors.blue, size: 50.0);
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return const SpinKitCircle(
+                              color: Colors.blue, size: 50.0);
                         } else if (snapshot.hasError) {
                           return const Text('Error loading data');
-                        } else if (!snapshot.hasData || snapshot.data!.data!.isEmpty) {
+                        } else if (!snapshot.hasData ||
+                            snapshot.data!.data!.isEmpty) {
                           return emptyData();
                         } else {
                           return Expanded(
                             child: ListView.builder(
                               itemCount: snapshot.data!.data!.length,
-                              itemBuilder: (context, index) => buildDownloadCard(snapshot, index),
+                              itemBuilder: (context, index) =>
+                                  buildDownloadCard(snapshot, index),
                             ),
                           );
                         }

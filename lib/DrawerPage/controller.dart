@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
-import 'package:employeeattendance/controller/globalvariable.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
 import 'package:get/get.dart';
 import '../class/constants.dart';
 
@@ -11,19 +11,21 @@ class CalController extends GetxController {
 
   Future<void> fetchAttendance() async {
     if (GlobalVariable.empID.isEmpty) {
-      Fluttertoast.showToast(msg: 'Employee ID not available. Please login again.');
+      Fluttertoast.showToast(
+          msg: 'Employee ID not available. Please login again.');
       return;
     }
-    
-    final url = '${apiUrl}employee/attendance-calendar?employee_id=${GlobalVariable.empID}';
-    
+
+    final url =
+        '${apiUrl}employee/attendance-calendar?employee_id=${GlobalVariable.empID}';
+
     // Print debugging information
     print('=== Attendance API Debug ===');
     print('Employee ID (uid): ${GlobalVariable.uid}');
     print('Employee ID (empID): ${GlobalVariable.empID}');
     print('Full API URL: $url');
     print('===========================');
-    
+
     isLoading.value = true;
     try {
       var response = await http.get(
@@ -32,16 +34,16 @@ class CalController extends GetxController {
           'Accept': 'application/json',
         },
       );
-      
+
       print('API Response Status: ${response.statusCode}');
       print('API Response Body: ${response.body}');
-      
+
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         print('Parsed Data: $data');
-        
+
         List<CalModel> output = [];
-        
+
         // Parse the new nested API response structure
         if (data['data'] is List) {
           for (var monthData in data['data']) {
@@ -49,7 +51,7 @@ class CalController extends GetxController {
               for (var dayData in monthData['data']) {
                 String status = dayData['status'] ?? 'absent';
                 String workStatus = _mapStatusToWorkStatus(status);
-                
+
                 output.add(CalModel(
                   date: dayData['date'] ?? '',
                   checkIn: 'N/A',
@@ -65,7 +67,7 @@ class CalController extends GetxController {
             }
           }
         }
-        
+
         print('Total records parsed: ${output.length}');
         attnData.assignAll(output);
       } else {
@@ -78,7 +80,7 @@ class CalController extends GetxController {
       isLoading.value = false;
     }
   }
-  
+
   String _mapStatusToWorkStatus(String status) {
     switch (status.toLowerCase()) {
       case 'present':

@@ -1,6 +1,6 @@
 import 'package:employeeattendance/DrawerPage/view_attendance.dart';
 import 'package:employeeattendance/HomePage/main_screen.dart';
-import 'package:employeeattendance/controller/globalvariable.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'dart:convert';
@@ -46,9 +46,9 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
       Fluttertoast.showToast(msg: 'User ID not available. Please login again.');
       return;
     }
-    
+
     setState(() {
-      _Id = GlobalVariable.uid.toString(); 
+      _Id = GlobalVariable.uid.toString();
       print(_Id);
     });
     _fetchAttendanceData();
@@ -57,7 +57,8 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
   Future<void> _fetchAttendanceData() async {
     if (_Id == null) return;
 
-    final response = await http.post(Uri.parse('https://pinghr.in/api/attendance?id=$_Id'));
+    final response =
+        await http.post(Uri.parse('https://pinghr.in/api/attendance?id=$_Id'));
 
     print(response.body);
     if (response.statusCode == 200 || response.statusCode == 201) {
@@ -90,7 +91,8 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
   List<DateTime> _getMonthDates(DateTime month) {
     DateTime firstDayOfMonth = DateTime(month.year, month.month, 1);
     int daysInMonth = DateTime(month.year, month.month + 1, 0).day;
-    return List.generate(daysInMonth, (index) => DateTime(month.year, month.month, index + 1));
+    return List.generate(
+        daysInMonth, (index) => DateTime(month.year, month.month, index + 1));
   }
 
   void _selectDateFromCalendar(DateTime date) {
@@ -111,23 +113,22 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
         ),
         automaticallyImplyLeading: false,
         backgroundColor: Colors.blue.shade900,
-        title: Text('My Attendance', 
-          style: TextStyle(
-            color: Colors.white, 
-            fontWeight: FontWeight.w600,
-            fontSize: 18
-          )
-        ),
+        title: Text('My Attendance',
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
+                fontSize: 18)),
         elevation: 0,
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.calendar_month_outlined, color: Colors.white, size: 24),
-            // onPressed: () => _selectDateFromCalendar(DateTime.now()),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ViewAttendance()));
-            }
-          ),
+              icon: Icon(Icons.calendar_month_outlined,
+                  color: Colors.white, size: 24),
+              // onPressed: () => _selectDateFromCalendar(DateTime.now()),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ViewAttendance()));
+              }),
         ],
       ),
       body: SingleChildScrollView(
@@ -160,7 +161,8 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
               onPageChanged: (index, reason) {
                 setState(() {
                   _currentMonth = DateTime(_currentMonth.year, index + 1);
-                  _selectedDate = _currentMonth.month == today.month && _currentMonth.year == today.year
+                  _selectedDate = _currentMonth.month == today.month &&
+                          _currentMonth.year == today.year
                       ? today
                       : DateTime(_currentMonth.year, _currentMonth.month, 1);
                 });
@@ -173,7 +175,8 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
                 onTap: () {
                   setState(() {
                     _currentMonth = DateTime(_currentMonth.year, month.month);
-                    _selectedDate = _currentMonth.month == today.month && _currentMonth.year == today.year
+                    _selectedDate = _currentMonth.month == today.month &&
+                            _currentMonth.year == today.year
                         ? today
                         : DateTime(_currentMonth.year, _currentMonth.month, 1);
                   });
@@ -183,7 +186,9 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
                   width: MediaQuery.of(context).size.width,
                   margin: EdgeInsets.symmetric(horizontal: 5.0),
                   decoration: BoxDecoration(
-                    color: _currentMonth.month == month.month ? Colors.blue.shade900 : Colors.transparent,
+                    color: _currentMonth.month == month.month
+                        ? Colors.blue.shade900
+                        : Colors.transparent,
                     border: Border.all(
                       color: Colors.grey.shade300,
                       width: 1,
@@ -196,7 +201,9 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: _currentMonth.month == month.month ? Colors.white : Colors.blue.shade900,
+                        color: _currentMonth.month == month.month
+                            ? Colors.white
+                            : Colors.blue.shade900,
                       ),
                     ),
                   ),
@@ -213,14 +220,14 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
               itemCount: monthDates.length,
               itemBuilder: (context, index) {
                 DateTime date = monthDates[index];
-                bool isToday = date.year == today.year && 
-                              date.month == today.month && 
-                              date.day == today.day;
-                bool isSelected = _selectedDate != null && 
-                                date.year == _selectedDate!.year && 
-                                date.month == _selectedDate!.month && 
-                                date.day == _selectedDate!.day;
-                
+                bool isToday = date.year == today.year &&
+                    date.month == today.month &&
+                    date.day == today.day;
+                bool isSelected = _selectedDate != null &&
+                    date.year == _selectedDate!.year &&
+                    date.month == _selectedDate!.month &&
+                    date.day == _selectedDate!.day;
+
                 return GestureDetector(
                   onTap: () => _selectDateFromCalendar(date),
                   child: Container(
@@ -228,11 +235,16 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
                     width: 60,
                     margin: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
                     decoration: BoxDecoration(
-                      color: isSelected ? Colors.blue.shade900 : 
-                             isToday ? Colors.blue.shade50 : Colors.transparent,
+                      color: isSelected
+                          ? Colors.blue.shade900
+                          : isToday
+                              ? Colors.blue.shade50
+                              : Colors.transparent,
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: isSelected ? Colors.blue.shade900 : Colors.grey.shade300,
+                        color: isSelected
+                            ? Colors.blue.shade900
+                            : Colors.grey.shade300,
                         width: 1,
                       ),
                     ),
@@ -244,7 +256,9 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
-                            color: isSelected ? Colors.white : Colors.grey.shade600,
+                            color: isSelected
+                                ? Colors.white
+                                : Colors.grey.shade600,
                           ),
                         ),
                         SizedBox(height: 8),
@@ -253,8 +267,11 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: isSelected ? Colors.white : 
-                                  isToday ? Colors.blue.shade900 : Colors.black87,
+                            color: isSelected
+                                ? Colors.white
+                                : isToday
+                                    ? Colors.blue.shade900
+                                    : Colors.black87,
                           ),
                         ),
                       ],
@@ -278,8 +295,9 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
       );
     }
 
-    final selectedDateStr = _selectedDate != null ? 
-        DateFormat('dd MMMM yyyy').format(_selectedDate!) : null;
+    final selectedDateStr = _selectedDate != null
+        ? DateFormat('dd MMMM yyyy').format(_selectedDate!)
+        : null;
     final attendance = _attendanceData.firstWhere(
       (record) => record['date'] == selectedDateStr,
       orElse: () => null,
@@ -291,10 +309,8 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
           padding: EdgeInsets.all(16),
           child: Column(
             children: [
-              Icon(Icons.event_busy_outlined, 
-                size: 48, 
-                color: Colors.grey.shade400
-              ),
+              Icon(Icons.event_busy_outlined,
+                  size: 48, color: Colors.grey.shade400),
               SizedBox(height: 16),
               Text(
                 'No attendance data for selected date',
@@ -349,7 +365,7 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
   Widget _buildDetailRow(String label, String value) {
     Color statusColor = Colors.black87;
     if (label == 'Status') {
-      switch(value.toLowerCase()) {
+      switch (value.toLowerCase()) {
         case 'present':
           statusColor = Colors.green.shade600;
           break;
@@ -412,10 +428,14 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
             crossAxisSpacing: 12,
             childAspectRatio: 2,
             children: [
-              _buildSummaryItem('${summary['workingDays']}', 'Working Days', Icons.work_outline, Colors.green.shade600),
-              _buildSummaryItem('${summary['halfDays']}', 'Half Days', Icons.hourglass_bottom_outlined, Colors.orange.shade600),
-              _buildSummaryItem('${summary['leaveDays']}', 'Leave Days', Icons.event_busy_outlined, Colors.red.shade600),
-              _buildSummaryItem('${summary['holidays']}', 'Holiday', Icons.celebration_outlined, Colors.blue.shade600),
+              _buildSummaryItem('${summary['workingDays']}', 'Working Days',
+                  Icons.work_outline, Colors.green.shade600),
+              _buildSummaryItem('${summary['halfDays']}', 'Half Days',
+                  Icons.hourglass_bottom_outlined, Colors.orange.shade600),
+              _buildSummaryItem('${summary['leaveDays']}', 'Leave Days',
+                  Icons.event_busy_outlined, Colors.red.shade600),
+              _buildSummaryItem('${summary['holidays']}', 'Holiday',
+                  Icons.celebration_outlined, Colors.blue.shade600),
             ],
           ),
         ],
@@ -444,17 +464,21 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
         continue;
       }
 
-      if (recordDate.year != _currentMonth.year || recordDate.month != _currentMonth.month) {
+      if (recordDate.year != _currentMonth.year ||
+          recordDate.month != _currentMonth.month) {
         continue;
       }
 
-      final status = (record['work_status']?.toString() ?? '').trim().toLowerCase();
+      final status =
+          (record['work_status']?.toString() ?? '').trim().toLowerCase();
 
       if (status == 'half day' || status == 'half-day' || status == 'halfday') {
         halfDays++;
       } else if (status.contains('leave') || status == 'absent') {
         leaveDays++;
-      } else if (status.contains('holiday') || status.contains('week off') || status.contains('sunday')) {
+      } else if (status.contains('holiday') ||
+          status.contains('week off') ||
+          status.contains('sunday')) {
         holidays++;
       } else if (status == 'present') {
         workingDays++;
@@ -469,7 +493,8 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
     };
   }
 
-  Widget _buildSummaryItem(String value, String label, IconData icon, Color iconColor) {
+  Widget _buildSummaryItem(
+      String value, String label, IconData icon, Color iconColor) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -512,4 +537,4 @@ class _MyAttendancePageState extends State<MyAttendancePage> {
       ),
     );
   }
-} 
+}

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:employeeattendance/DrawerPage/view_attendance.dart';
 import 'package:employeeattendance/class/constants.dart';
-import 'package:employeeattendance/controller/globalvariable.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
 import 'package:employeeattendance/model/calender_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +19,7 @@ class _CalenderState extends State<Calender> {
     if (GlobalVariable.uid == null) {
       throw Exception('User ID not available. Please login again.');
     }
-    
+
     final url = '${apiUrl}attendance?id=${GlobalVariable.uid}';
     var response = await http.post(Uri.parse(url));
     var data = jsonDecode(response.body.toString());
@@ -72,7 +72,7 @@ class _CalenderState extends State<Calender> {
                 ),
               );
             }
-            
+
             return Column(
               children: [
                 Expanded(
@@ -161,20 +161,18 @@ class _CalenderState extends State<Calender> {
               ),
             ),
             const SizedBox(height: 8),
-            const Text('Check-In Location', style: TextStyle(fontWeight: FontWeight.bold)),
+            const Text('Check-In Location',
+                style: TextStyle(fontWeight: FontWeight.bold)),
             Text(
               snapshot.data!.data![index].checkinLocation!,
-              style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.indigoAccent),
+              style: const TextStyle(fontSize: 16, color: Colors.indigoAccent),
             ),
             const SizedBox(height: 8),
-            const Text('Check-Out Location', style: TextStyle(fontWeight: FontWeight.bold)),
+            const Text('Check-Out Location',
+                style: TextStyle(fontWeight: FontWeight.bold)),
             Text(
               snapshot.data!.data![index].checkoutLocation ?? '-----',
-              style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.indigoAccent),
+              style: const TextStyle(fontSize: 16, color: Colors.indigoAccent),
             ),
             const SizedBox(height: 8),
             Row(

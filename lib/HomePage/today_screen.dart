@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 import 'package:employeeattendance/class/constants.dart';
-import 'package:employeeattendance/controller/location.dart';
+import 'package:employeeattendance/controllers/location.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -10,7 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'package:slide_to_act/slide_to_act.dart';
-import '../controller/globalvariable.dart';
+import '../controllers/globalvariable.dart';
 
 class TodayScreen extends StatefulWidget {
   const TodayScreen({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:employeeattendance/DrawerPage/appliedleave.dart';
 import 'package:employeeattendance/class/constants.dart';
-import 'package:employeeattendance/controller/globalvariable.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';

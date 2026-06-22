@@ -1,4 +1,4 @@
-import 'package:employeeattendance/controller/globalvariable.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
 import 'package:flutter/material.dart';
 
 class PersonalDetails extends StatelessWidget {

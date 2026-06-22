@@ -2,7 +2,7 @@ import 'package:employeeattendance/DrawerPage/appliedleave.dart';
 import 'package:employeeattendance/DrawerPage/leaveapplication.dart';
 import 'package:employeeattendance/HomePage/main_screen.dart';
 import 'package:employeeattendance/api_services.dart';
-import 'package:employeeattendance/controller/globalvariable.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
 import 'package:flutter/material.dart';
 import 'package:employeeattendance/LeavePage/leave_history_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -18,7 +18,8 @@ class AutoLeaveScreen extends StatefulWidget {
 
 class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
   List<bool> _isSelected = [true, false];
-  Map<DateTime, Map<String, dynamic>> _holidays = {}; // Changed to store type info
+  Map<DateTime, Map<String, dynamic>> _holidays =
+      {}; // Changed to store type info
   final ApiService _holidayService = ApiService();
   List<Map<String, dynamic>> _leaveData = [];
   String _employeeId = '';
@@ -47,14 +48,15 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
       print('=== Holidays Fetched Successfully ===');
       print('Total holidays received: ${holidays.length}');
       for (var holiday in holidays) {
-        print('Holiday - Date: ${holiday.date}, Name: ${holiday.name}, Type: ${holiday.type}');
+        print(
+            'Holiday - Date: ${holiday.date}, Name: ${holiday.name}, Type: ${holiday.type}');
       }
       print('=====================================');
-      
+
       setState(() {
         // Normalize dates to midnight (00:00:00) for proper comparison
         _holidays = {
-          for (var holiday in holidays) 
+          for (var holiday in holidays)
             DateTime(holiday.date.year, holiday.date.month, holiday.date.day): {
               'name': holiday.name,
               'type': holiday.type ?? 'holiday'
@@ -69,7 +71,8 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
 
   Future<void> _fetchLeaveData() async {
     try {
-      List<Map<String, dynamic>> leaveData = await _holidayService.fetchLeaveData(_employeeId);
+      List<Map<String, dynamic>> leaveData =
+          await _holidayService.fetchLeaveData(_employeeId);
       setState(() {
         _leaveData = leaveData;
       });
@@ -90,11 +93,16 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: Colors.white, size: 20),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MainScreen()));
           },
         ),
         centerTitle: true,
-        title: Text('Leaves', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.white)),
+        title: Text('Leaves',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.white)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -153,7 +161,8 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
                     );
                   },
                   icon: Icon(Icons.history, color: Colors.white),
-                  label: Text('Leave History', style: TextStyle(color: Colors.white)),
+                  label: Text('Leave History',
+                      style: TextStyle(color: Colors.white)),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue.shade900,
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -164,11 +173,13 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => LeaveApplication()),
+                      MaterialPageRoute(
+                          builder: (context) => LeaveApplication()),
                     );
                   },
                   icon: Icon(Icons.add, color: Colors.white),
-                  label: Text('Apply Leave', style: TextStyle(color: Colors.white)),
+                  label: Text('Apply Leave',
+                      style: TextStyle(color: Colors.white)),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue.shade900,
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -188,7 +199,7 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
       itemBuilder: (context, index) {
         try {
           final leave = _leaveData[index];
-          
+
           // Safely parse dates with fallback
           DateTime startDate;
           DateTime endDate;
@@ -200,9 +211,11 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
             startDate = DateTime.now();
             endDate = DateTime.now();
           }
-          
+
           final leaveCount = endDate.difference(startDate).inDays + 1;
-          final status = leave['status'] == '2' ? 'Rejected' : 'Approved on ${leave['approved_date'] ?? 'N/A'}';
+          final status = leave['status'] == '2'
+              ? 'Rejected'
+              : 'Approved on ${leave['approved_date'] ?? 'N/A'}';
 
           return Card(
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
@@ -268,7 +281,9 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
                       'Status: $status',
                       style: TextStyle(
                         fontSize: 14,
-                        color: status.contains('Rejected') ? Colors.red : Colors.green,
+                        color: status.contains('Rejected')
+                            ? Colors.red
+                            : Colors.green,
                       ),
                     ),
                   ],
@@ -292,19 +307,21 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
 
   Widget _buildHolidayCalendar() {
     DateTime now = DateTime.now();
-    
+
     // Calculate date range from holidays
     DateTime firstDay = DateTime.utc(2023, 1, 1);
     DateTime lastDay = DateTime.utc(2025, 12, 31);
-    
+
     if (_holidays.isNotEmpty) {
       final dates = _holidays.keys.toList();
       dates.sort();
       firstDay = DateTime(dates.first.year, dates.first.month, 1);
       lastDay = DateTime(dates.last.year, dates.last.month + 1, 0);
     }
-    
-    DateTime focusedDay = now.isBefore(firstDay) ? firstDay : (now.isAfter(lastDay) ? lastDay : now);
+
+    DateTime focusedDay = now.isBefore(firstDay)
+        ? firstDay
+        : (now.isAfter(lastDay) ? lastDay : now);
 
     print('=== Holiday Calendar Debug ===');
     print('First day: $firstDay');
@@ -326,7 +343,8 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
               // Normalize day to midnight for comparison
               final normalizedDay = DateTime(day.year, day.month, day.day);
               if (_holidays.containsKey(normalizedDay)) {
-                print('Holiday found on $normalizedDay: ${_holidays[normalizedDay]}');
+                print(
+                    'Holiday found on $normalizedDay: ${_holidays[normalizedDay]}');
                 return [_holidays[normalizedDay]!['name']];
               }
               return [];
@@ -335,19 +353,21 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
               defaultBuilder: (context, day, focusedDay) {
                 // Normalize day to midnight for comparison
                 final normalizedDay = DateTime(day.year, day.month, day.day);
-                
+
                 if (_holidays.containsKey(normalizedDay)) {
                   final holiday = _holidays[normalizedDay]!;
-                  final type = holiday['type']?.toString().toLowerCase() ?? 'holiday';
-                  
+                  final type =
+                      holiday['type']?.toString().toLowerCase() ?? 'holiday';
+
                   // Determine color based on type
                   Color cellColor;
                   Color textColor;
-                  
+
                   if (type.contains('weekly_off')) {
                     cellColor = Colors.yellow.shade600;
                     textColor = Colors.black;
-                  } else if (type.contains('holiday') || type.contains('official')) {
+                  } else if (type.contains('holiday') ||
+                      type.contains('official')) {
                     cellColor = Colors.blue.shade600;
                     textColor = Colors.white;
                   } else {
@@ -355,7 +375,7 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
                     cellColor = Colors.red.shade600;
                     textColor = Colors.white;
                   }
-                  
+
                   return Container(
                     margin: const EdgeInsets.all(4.0),
                     decoration: BoxDecoration(
@@ -378,19 +398,21 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
               },
               todayBuilder: (context, day, focusedDay) {
                 final normalizedDay = DateTime(day.year, day.month, day.day);
-                
+
                 if (_holidays.containsKey(normalizedDay)) {
                   final holiday = _holidays[normalizedDay]!;
-                  final type = holiday['type']?.toString().toLowerCase() ?? 'holiday';
-                  
+                  final type =
+                      holiday['type']?.toString().toLowerCase() ?? 'holiday';
+
                   // Determine color based on type
                   Color cellColor;
                   Color textColor;
-                  
+
                   if (type.contains('weekly_off')) {
                     cellColor = Colors.yellow.shade600;
                     textColor = Colors.black;
-                  } else if (type.contains('holiday') || type.contains('official')) {
+                  } else if (type.contains('holiday') ||
+                      type.contains('official')) {
                     cellColor = Colors.blue.shade600;
                     textColor = Colors.white;
                   } else {
@@ -398,7 +420,7 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
                     cellColor = Colors.red.shade600;
                     textColor = Colors.white;
                   }
-                  
+
                   return Container(
                     margin: const EdgeInsets.all(4.0),
                     decoration: BoxDecoration(
@@ -538,28 +560,32 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
     try {
       // Try multiple date formats
       dateString = dateString.trim();
-      
+
       // Format 1: Try numeric format (dd-mm-yyyy or yyyy-mm-dd)
       if (dateString.contains('-')) {
         final parts = dateString.split('-');
-        
+
         if (parts.length == 3) {
           // Check if it's numeric (dd-mm-yyyy or similar)
-          if (RegExp(r'^\d+$').hasMatch(parts[0]) && RegExp(r'^\d+$').hasMatch(parts[1]) && RegExp(r'^\d+$').hasMatch(parts[2])) {
+          if (RegExp(r'^\d+$').hasMatch(parts[0]) &&
+              RegExp(r'^\d+$').hasMatch(parts[1]) &&
+              RegExp(r'^\d+$').hasMatch(parts[2])) {
             int day = int.parse(parts[0]);
             int month = int.parse(parts[1]);
             int year = int.parse(parts[2]);
-            
+
             // Handle if year is 2-digit or 4-digit
             if (year < 100) {
               year = year < 50 ? 2000 + year : 1900 + year;
             }
-            
+
             return DateTime(year, month, day);
           }
-          
+
           // Format 2: Try text month format (dd-Jan-yyyy)
-          if (RegExp(r'^\d+$').hasMatch(parts[0]) && RegExp(r'^[a-zA-Z]+$').hasMatch(parts[1]) && RegExp(r'^\d+$').hasMatch(parts[2])) {
+          if (RegExp(r'^\d+$').hasMatch(parts[0]) &&
+              RegExp(r'^[a-zA-Z]+$').hasMatch(parts[1]) &&
+              RegExp(r'^\d+$').hasMatch(parts[2])) {
             int day = int.parse(parts[0]);
             int month = _monthStringToNumber(parts[1]);
             int year = int.parse(parts[2]);
@@ -567,14 +593,14 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
           }
         }
       }
-      
+
       // Format 3: Try ISO format (yyyy-mm-dd)
       try {
         return DateTime.parse(dateString);
       } catch (e) {
         // Continue to next format
       }
-      
+
       // If all parsing fails, return today's date as fallback
       print('Unable to parse date: $dateString, using today\'s date');
       return DateTime.now();
@@ -586,31 +612,56 @@ class _AutoLeaveScreenState extends State<AutoLeaveScreen> {
 
   int _monthStringToNumber(String month) {
     switch (month.toLowerCase()) {
-      case 'jan': return 1;
-      case 'feb': return 2;
-      case 'mar': return 3;
-      case 'apr': return 4;
-      case 'may': return 5;
-      case 'jun': return 6;
-      case 'jul': return 7;
-      case 'aug': return 8;
-      case 'sep': return 9;
-      case 'oct': return 10;
-      case 'nov': return 11;
-      case 'dec': return 12;
-      case 'january': return 1;
-      case 'february': return 2;
-      case 'march': return 3;
-      case 'april': return 4;
-      case 'may': return 5;
-      case 'june': return 6;
-      case 'july': return 7;
-      case 'august': return 8;
-      case 'september': return 9;
-      case 'october': return 10;
-      case 'november': return 11;
-      case 'december': return 12;
-      default: throw FormatException('Invalid month format: $month');
+      case 'jan':
+        return 1;
+      case 'feb':
+        return 2;
+      case 'mar':
+        return 3;
+      case 'apr':
+        return 4;
+      case 'may':
+        return 5;
+      case 'jun':
+        return 6;
+      case 'jul':
+        return 7;
+      case 'aug':
+        return 8;
+      case 'sep':
+        return 9;
+      case 'oct':
+        return 10;
+      case 'nov':
+        return 11;
+      case 'dec':
+        return 12;
+      case 'january':
+        return 1;
+      case 'february':
+        return 2;
+      case 'march':
+        return 3;
+      case 'april':
+        return 4;
+      case 'may':
+        return 5;
+      case 'june':
+        return 6;
+      case 'july':
+        return 7;
+      case 'august':
+        return 8;
+      case 'september':
+        return 9;
+      case 'october':
+        return 10;
+      case 'november':
+        return 11;
+      case 'december':
+        return 12;
+      default:
+        throw FormatException('Invalid month format: $month');
     }
   }
-} 
+}

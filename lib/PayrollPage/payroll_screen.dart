@@ -1,6 +1,6 @@
 import 'package:employeeattendance/HomePage/main_screen.dart';
 import 'package:employeeattendance/api_services.dart';
-import 'package:employeeattendance/controller/globalvariable.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
 import 'package:employeeattendance/model/salary_structure_model.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +36,7 @@ class _PayrollScreenState extends State<PayrollScreen> {
       }
 
       final salaryData = await _apiService.fetchPayrollHistory(empId);
-      
+
       setState(() {
         _salaryData = salaryData;
         _isLoading = false;
@@ -60,7 +60,8 @@ class _PayrollScreenState extends State<PayrollScreen> {
           foregroundColor: Colors.white,
           leading: IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MainScreen()));
             },
             icon: Icon(Icons.arrow_back_ios, color: Colors.white, size: 18),
           ),
@@ -72,7 +73,11 @@ class _PayrollScreenState extends State<PayrollScreen> {
           ],
           elevation: 0,
           centerTitle: true,
-          title: Text('Payroll', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+          title: Text('Payroll',
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white)),
           bottom: TabBar(
             dividerHeight: 0,
             overlayColor: MaterialStateProperty.all(Colors.transparent),
@@ -227,11 +232,13 @@ class _PayrollScreenState extends State<PayrollScreen> {
                       ElevatedButton.icon(
                         onPressed: _loadSalaryData,
                         icon: Icon(Icons.refresh, size: 18),
-                        label: Text('Try Again', style: TextStyle(fontSize: 14)),
+                        label:
+                            Text('Try Again', style: TextStyle(fontSize: 14)),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue.shade900,
                           foregroundColor: Colors.white,
-                          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 24, vertical: 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -408,11 +415,31 @@ class _PayrollScreenState extends State<PayrollScreen> {
               'Attendance Breakdown',
               Icons.analytics,
               [
-                _buildAttendanceRow('Present Days', '${_salaryData!.breakdown.present.count}', Colors.green, Icons.check_circle),
-                _buildAttendanceRow('Absent Days', '${_salaryData!.breakdown.absent.count}', Colors.red, Icons.cancel),
-                _buildAttendanceRow('Half Day / Incomplete', '${_salaryData!.breakdown.halfDays.count}', Colors.orange, Icons.schedule),
-                _buildAttendanceRow('Weekly Off', '${_salaryData!.breakdown.sundays.count}', Colors.blue, Icons.weekend),
-                _buildAttendanceRow('Holidays', '${_salaryData!.breakdown.holidays.count}', Colors.teal, Icons.celebration),
+                _buildAttendanceRow(
+                    'Present Days',
+                    '${_salaryData!.breakdown.present.count}',
+                    Colors.green,
+                    Icons.check_circle),
+                _buildAttendanceRow(
+                    'Absent Days',
+                    '${_salaryData!.breakdown.absent.count}',
+                    Colors.red,
+                    Icons.cancel),
+                _buildAttendanceRow(
+                    'Half Day / Incomplete',
+                    '${_salaryData!.breakdown.halfDays.count}',
+                    Colors.orange,
+                    Icons.schedule),
+                _buildAttendanceRow(
+                    'Weekly Off',
+                    '${_salaryData!.breakdown.sundays.count}',
+                    Colors.blue,
+                    Icons.weekend),
+                _buildAttendanceRow(
+                    'Holidays',
+                    '${_salaryData!.breakdown.holidays.count}',
+                    Colors.teal,
+                    Icons.celebration),
               ],
             ),
             SizedBox(height: 16),
@@ -422,9 +449,14 @@ class _PayrollScreenState extends State<PayrollScreen> {
               'Salary Details',
               Icons.receipt_long,
               [
-                _buildDetailRow('Employee ID', _salaryData!.employeeId, Icons.badge),
-                _buildDetailRow('Month', _salaryData!.month, Icons.calendar_month),
-                _buildDetailRow('Total Salary', '₹${_salaryData!.totalSalary.toInt()}', Icons.account_balance_wallet),
+                _buildDetailRow(
+                    'Employee ID', _salaryData!.employeeId, Icons.badge),
+                _buildDetailRow(
+                    'Month', _salaryData!.month, Icons.calendar_month),
+                _buildDetailRow(
+                    'Total Salary',
+                    '₹${_salaryData!.totalSalary.toInt()}',
+                    Icons.account_balance_wallet),
               ],
             ),
             SizedBox(height: 16),
@@ -577,29 +609,36 @@ class _PayrollScreenState extends State<PayrollScreen> {
             Container(
               width: double.infinity,
               child: ElevatedButton.icon(
-                onPressed: _salaryData != null ? () {
-                  // Implement download functionality here
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Row(
-                        children: [
-                          Icon(Icons.info_outline, color: Colors.white, size: 18),
-                          SizedBox(width: 8),
-                          Expanded(
-                            child: Text('Download functionality will be implemented here', style: TextStyle(fontSize: 13)),
+                onPressed: _salaryData != null
+                    ? () {
+                        // Implement download functionality here
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Row(
+                              children: [
+                                Icon(Icons.info_outline,
+                                    color: Colors.white, size: 18),
+                                SizedBox(width: 8),
+                                Expanded(
+                                  child: Text(
+                                      'Download functionality will be implemented here',
+                                      style: TextStyle(fontSize: 13)),
+                                ),
+                              ],
+                            ),
+                            backgroundColor: Colors.blue.shade900,
+                            behavior: SnackBarBehavior.floating,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
                           ),
-                        ],
-                      ),
-                      backgroundColor: Colors.blue.shade900,
-                      behavior: SnackBarBehavior.floating,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                  );
-                } : null,
+                        );
+                      }
+                    : null,
                 icon: Icon(Icons.download, size: 18),
-                label: Text('Download PDF', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+                label: Text('Download PDF',
+                    style:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue.shade900,
                   foregroundColor: Colors.white,
@@ -639,11 +678,13 @@ class _PayrollScreenState extends State<PayrollScreen> {
                     SizedBox(height: 12),
                     ElevatedButton(
                       onPressed: _loadSalaryData,
-                      child: Text('Load Salary Data', style: TextStyle(fontSize: 13)),
+                      child: Text('Load Salary Data',
+                          style: TextStyle(fontSize: 13)),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.grey[600],
                         foregroundColor: Colors.white,
-                        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 24, vertical: 10),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -660,7 +701,8 @@ class _PayrollScreenState extends State<PayrollScreen> {
   }
 
   // Professional UI Helper Methods
-  Widget _buildMetricCard(String title, String value, IconData icon, Color color) {
+  Widget _buildMetricCard(
+      String title, String value, IconData icon, Color color) {
     return Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -694,7 +736,8 @@ class _PayrollScreenState extends State<PayrollScreen> {
     );
   }
 
-  Widget _buildProfessionalSection(String title, IconData icon, List<Widget> children) {
+  Widget _buildProfessionalSection(
+      String title, IconData icon, List<Widget> children) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -745,7 +788,8 @@ class _PayrollScreenState extends State<PayrollScreen> {
     );
   }
 
-  Widget _buildAttendanceRow(String label, String value, Color color, IconData icon) {
+  Widget _buildAttendanceRow(
+      String label, String value, Color color, IconData icon) {
     return Container(
       margin: EdgeInsets.only(bottom: 8),
       padding: EdgeInsets.all(12),
@@ -843,7 +887,8 @@ class _PayrollScreenState extends State<PayrollScreen> {
     );
   }
 
-  Widget _buildDateSection(String title, IconData icon, List<String> dates, Color color) {
+  Widget _buildDateSection(
+      String title, IconData icon, List<String> dates, Color color) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -906,22 +951,25 @@ class _PayrollScreenState extends State<PayrollScreen> {
             Wrap(
               spacing: 6,
               runSpacing: 6,
-              children: dates.map((date) => Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                decoration: BoxDecoration(
-                  color: color.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: color.withOpacity(0.3)),
-                ),
-                child: Text(
-                  date,
-                  style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w500,
-                    color: color,
-                  ),
-                ),
-              )).toList(),
+              children: dates
+                  .map((date) => Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: color.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(color: color.withOpacity(0.3)),
+                        ),
+                        child: Text(
+                          date,
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w500,
+                            color: color,
+                          ),
+                        ),
+                      ))
+                  .toList(),
             ),
           ],
         ),
@@ -935,7 +983,8 @@ class _PayrollScreenState extends State<PayrollScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+          Text(title,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
           ...rows,
         ],
       ),
@@ -949,7 +998,8 @@ class _PayrollScreenState extends State<PayrollScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(label, style: TextStyle(fontSize: 13)),
-          Text(amount, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+          Text(amount,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
         ],
       ),
     );
@@ -960,9 +1010,11 @@ class _PayrollScreenState extends State<PayrollScreen> {
       child: Column(
         children: [
           Text(label, style: TextStyle(color: color, fontSize: 8)),
-          Text(amount, style: TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 14)),
+          Text(amount,
+              style: TextStyle(
+                  color: color, fontWeight: FontWeight.bold, fontSize: 14)),
         ],
       ),
     );
   }
-} 
+}

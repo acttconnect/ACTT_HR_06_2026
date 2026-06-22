@@ -19,7 +19,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../controller/globalvariable.dart';
+import '../controllers/globalvariable.dart';
 
 // ─── Blue.shade900 palette reference ───────────────────────────────────────
 // Colors.blue.shade900  = #0D47A1  ← primary brand

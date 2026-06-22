@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:employeeattendance/class/constants.dart';
-import 'package:employeeattendance/controller/globalvariable.dart';
+import 'package:employeeattendance/controllers/globalvariable.dart';
 import 'package:employeeattendance/model/data_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -50,10 +50,8 @@ class AppliedLeave extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.history_outlined, 
-                            size: 64, 
-                            color: Colors.grey[400]
-                          ),
+                          Icon(Icons.history_outlined,
+                              size: 64, color: Colors.grey[400]),
                           const SizedBox(height: 16),
                           Text(
                             "No leave applications yet",
@@ -83,38 +81,46 @@ class AppliedLeave extends StatelessWidget {
 
   Widget buildHistoryCard(AsyncSnapshot<DataModel> snapshot, int index) {
     TextStyle text = const TextStyle(
-      fontSize: 15, 
+      fontSize: 15,
       color: Colors.black87,
       height: 1.5,
     );
     TextStyle smallText = TextStyle(
-      fontSize: 13, 
+      fontSize: 13,
       color: Colors.grey[600],
       height: 1.5,
     );
     TextStyle headText = const TextStyle(
-      fontSize: 18, 
-      color: Colors.black87, 
+      fontSize: 18,
+      color: Colors.black87,
       fontWeight: FontWeight.w600,
       height: 1.2,
     );
     String? status = snapshot.data!.employeeLeaveData![index].status;
 
     Color getStatusColor() {
-      switch(status) {
-        case "0": return Colors.orange;
-        case "1": return Colors.green.shade600;
-        case "2": return Colors.red.shade600;
-        default: return Colors.grey;
+      switch (status) {
+        case "0":
+          return Colors.orange;
+        case "1":
+          return Colors.green.shade600;
+        case "2":
+          return Colors.red.shade600;
+        default:
+          return Colors.grey;
       }
     }
 
     String getStatusText() {
-      switch(status) {
-        case "0": return "Pending";
-        case "1": return "Approved";
-        case "2": return "Rejected";
-        default: return "Unknown";
+      switch (status) {
+        case "0":
+          return "Pending";
+        case "1":
+          return "Approved";
+        case "2":
+          return "Rejected";
+        default:
+          return "Unknown";
       }
     }
 
@@ -144,7 +150,8 @@ class AppliedLeave extends StatelessWidget {
                   style: headText,
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
                     color: getStatusColor().withOpacity(0.1),
                     borderRadius: BorderRadius.circular(20),
@@ -172,10 +179,7 @@ class AppliedLeave extends StatelessWidget {
             const SizedBox(height: 8),
             Row(
               children: [
-                Icon(Icons.calendar_today, 
-                  size: 16, 
-                  color: Colors.grey[600]
-                ),
+                Icon(Icons.calendar_today, size: 16, color: Colors.grey[600]),
                 const SizedBox(width: 8),
                 Text(
                   "${snapshot.data!.employeeLeaveData![index].startDate}",

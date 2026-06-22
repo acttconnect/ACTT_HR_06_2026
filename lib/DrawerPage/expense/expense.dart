@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
-import '../../controller/globalvariable.dart';
+import '../../controllers/globalvariable.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -107,7 +107,8 @@ class _ExpensesState extends State<Expenses> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add your Expense', style: TextStyle(color: Colors.white)),
+        title: const Text('Add your Expense',
+            style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue.shade900,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
@@ -183,7 +184,8 @@ class _ExpensesState extends State<Expenses> {
                                 child: Container(
                                   height: 50,
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.grey.shade300),
+                                    border:
+                                        Border.all(color: Colors.grey.shade300),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   child: const Row(

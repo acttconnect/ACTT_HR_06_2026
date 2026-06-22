@@ -7,7 +7,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import '../class/constants.dart';
-import '../controller/globalvariable.dart';
+import '../controllers/globalvariable.dart';
 import '../model/showdoc_model.dart';
 
 class ShowUploadDoc extends StatefulWidget {
@@ -50,7 +50,8 @@ class _ShowUploadDocState extends State<ShowUploadDoc> {
         OpenFile.open(path);
         return path;
       } else {
-        throw Exception('Failed to download document. Status code: ${response.statusCode}');
+        throw Exception(
+            'Failed to download document. Status code: ${response.statusCode}');
       }
     } catch (e) {
       Fluttertoast.showToast(msg: 'Download error: $e');
@@ -69,7 +70,11 @@ class _ShowUploadDocState extends State<ShowUploadDoc> {
           onPressed: () => Get.back(),
         ),
         backgroundColor: Colors.blue.shade900,
-        title: const Text('Uploaded Documents', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),),
+        title: const Text(
+          'Uploaded Documents',
+          style: TextStyle(
+              color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+        ),
         elevation: 0,
         centerTitle: true,
       ),
@@ -86,11 +91,13 @@ class _ShowUploadDocState extends State<ShowUploadDoc> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.error_outline, size: 64, color: Colors.red),
+                          const Icon(Icons.error_outline,
+                              size: 64, color: Colors.red),
                           const SizedBox(height: 16),
                           Text(
                             'Error: ${snapshot.error}',
-                            style: const TextStyle(fontSize: 16, color: Colors.red),
+                            style: const TextStyle(
+                                fontSize: 16, color: Colors.red),
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 16),
@@ -108,13 +115,16 @@ class _ShowUploadDocState extends State<ShowUploadDoc> {
                   } else {
                     // Check if the API returned an error or empty data
                     final showDocModel = snapshot.data!;
-                    if (showDocModel.error == true || showDocModel.data == null || showDocModel.data!.isEmpty) {
+                    if (showDocModel.error == true ||
+                        showDocModel.data == null ||
+                        showDocModel.data!.isEmpty) {
                       return emptyData();
                     } else {
                       return ListView.builder(
                         shrinkWrap: true,
                         itemCount: showDocModel.data!.length,
-                        itemBuilder: (context, index) => buildDownloadCard(snapshot, index),
+                        itemBuilder: (context, index) =>
+                            buildDownloadCard(snapshot, index),
                       );
                     }
                   }
@@ -143,7 +153,8 @@ class _ShowUploadDocState extends State<ShowUploadDoc> {
             children: [
               Text(
                 item.documentName!.toUpperCase(),
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 4),
               Text(
