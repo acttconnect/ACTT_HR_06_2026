@@ -28,6 +28,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../DrawerPage/profile_screen.dart';
 import 'package:http/http.dart' as http;
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -232,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             delay: 0.2,
             child: _buildSectionCard(
               title: 'News & Updates',
-              icon: Icons.newspaper_rounded,
+              icon: const FaIcon(FontAwesomeIcons.newspaper),
               child: _buildNews(),
             )),
         const SizedBox(height: 14),
@@ -243,7 +244,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             delay: 0.3,
             child: _buildSectionCard(
               title: 'Leave & Attendance',
-              icon: Icons.calendar_month_rounded,
+              icon: const FaIcon(FontAwesomeIcons.calendarDays),
               child: _buildLeaveSection(),
             )),
         const SizedBox(height: 14),
@@ -254,7 +255,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             delay: 0.4,
             child: _buildSectionCard(
               title: 'Birthdays & Anniversaries',
-              icon: FontAwesomeIcons.cakeCandles,
+              icon: FaIcon(FontAwesomeIcons.cakeCandles),
               iconSize: 16,
               child: _buildBirthday(),
             )),
@@ -266,7 +267,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             delay: 0.5,
             child: _buildSectionCard(
               title: 'Rewards & Recognition',
-              icon: FontAwesomeIcons.handsClapping,
+              icon: FaIcon(FontAwesomeIcons.handsClapping),
               iconSize: 16,
               child: _buildReward(),
             )),
@@ -632,7 +633,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   // ── Section Card wrapper ─────────────────────────────────────────────────
   Widget _buildSectionCard({
     required String title,
-    required IconData icon,
+    required FaIcon icon,
     required Widget child,
     double iconSize = 18,
   }) {
@@ -668,7 +669,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     color: brandBlue.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Icon(icon, color: brandBlue, size: iconSize),
+                  child: IconTheme(
+                    data: IconThemeData(
+                      color: brandBlue,
+                      size: iconSize,
+                    ),
+                    child: icon,
+                  ),
                 ),
                 const SizedBox(width: 10),
                 Text(
@@ -792,7 +799,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ),
             );
           }
-          return _buildEmptyState('No news available', Icons.newspaper_rounded);
+          return _buildEmptyState(
+              'No news available', FontAwesomeIcons.newspaper);
         },
       ),
     );
@@ -822,8 +830,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 bottomLeft: Radius.circular(12),
               ),
             ),
-            child: const Icon(FontAwesomeIcons.newspaper,
-                color: Colors.white, size: 24),
+            child: const FaIcon(
+              FontAwesomeIcons.newspaper,
+              color: Colors.white,
+              size: 24,
+            ),
           ),
           Expanded(
             child: Padding(
@@ -886,7 +897,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               itemBuilder: (_, index) => _buildBirthdayCard(snapshot, index),
             );
           }
-          return _buildEmptyState('No data available', Icons.info_outline);
+          return _buildEmptyState(
+            'No data available',
+            FontAwesomeIcons.circleInfo,
+          );
         },
       ),
     );
@@ -939,7 +953,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ],
             ),
           ),
-          const Icon(FontAwesomeIcons.cakeCandles,
+          const FaIcon(FontAwesomeIcons.cakeCandles,
               color: Color(0xFFF97316), size: 20),
         ],
       ),
@@ -1001,7 +1015,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               color: const Color(0xFF16A34A).withOpacity(0.12),
               shape: BoxShape.circle,
             ),
-            child: const Icon(FontAwesomeIcons.handsClapping,
+            child: const FaIcon(FontAwesomeIcons.handsClapping,
                 color: Color(0xFF16A34A), size: 24),
           ),
           const SizedBox(height: 10),
@@ -1087,12 +1101,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
-  Widget _buildEmptyState(String msg, IconData icon) {
+  Widget _buildEmptyState(String msg, FaIconData icon) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, color: Colors.grey.shade300, size: 32),
+          FaIcon(icon, color: Colors.grey.shade300, size: 32),
           const SizedBox(height: 6),
           Text(msg,
               style: TextStyle(fontSize: 12, color: Colors.grey.shade400)),
@@ -1177,69 +1191,84 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     ),
 
                     Divider(
-                        color: Colors.white.withOpacity(0.15),
-                        height: 0,
-                        indent: 16,
-                        endIndent: 16),
+                      color: Colors.white.withOpacity(0.15),
+                      height: 0,
+                      indent: 16,
+                      endIndent: 16,
+                    ),
                     const SizedBox(height: 8),
 
                     _drawerItem(
-                        icon: FontAwesomeIcons.houseChimneyUser,
-                        title: 'Home',
-                        onTap: () => Navigator.pop(context)),
-                    _drawerItem(
-                        icon: FontAwesomeIcons.idCard,
-                        title: 'Profile',
-                        onTap: () => Get.to(() => const ProfileScreen())),
-                    _drawerItem(
-                        icon: FontAwesomeIcons.calendarDay,
-                        title: 'Attendance',
-                        onTap: () => Get.to(() => const Calender())),
+                      icon: FontAwesomeIcons.houseChimneyUser,
+                      title: 'Home',
+                      onTap: () => Navigator.pop(context),
+                    ),
 
-                    // Leaves expansion
+                    _drawerItem(
+                      icon: FontAwesomeIcons.idCard,
+                      title: 'Profile',
+                      onTap: () => Get.to(() => const ProfileScreen()),
+                    ),
+
+                    _drawerItem(
+                      icon: FontAwesomeIcons.calendarDay,
+                      title: 'Attendance',
+                      onTap: () => Get.to(() => const Calender()),
+                    ),
+
+// ── Leaves expansion ─────────────────────────────
                     _drawerExpansion(
                       icon: FontAwesomeIcons.personWalkingArrowRight,
                       title: 'Leaves',
                       children: [
                         _drawerSubItem(
-                            'Apply for Leave',
-                            FontAwesomeIcons.fileCirclePlus,
-                            () => Get.to(() => const LeaveApplication())),
+                          'Apply for Leave',
+                          FontAwesomeIcons.fileCirclePlus,
+                          () => Get.to(() => const LeaveApplication()),
+                        ),
                         _drawerSubItem(
-                            'Leave Request History',
-                            FontAwesomeIcons.clockRotateLeft,
-                            () => Get.to(() => const AppliedLeave())),
+                          'Leave Request History',
+                          FontAwesomeIcons.clockRotateLeft,
+                          () => Get.to(() => const AppliedLeave()),
+                        ),
                       ],
                     ),
 
-                    // Expense expansion
+// ── Expense expansion ─────────────────────────────
                     _drawerExpansion(
                       icon: FontAwesomeIcons.sackDollar,
                       title: 'Expense',
                       children: [
                         _drawerSubItem(
-                            'Add Expense',
-                            FontAwesomeIcons.fileCirclePlus,
-                            () => Get.to(() => const Expenses())),
+                          'Add Expense',
+                          FontAwesomeIcons.fileCirclePlus,
+                          () => Get.to(() => const Expenses()),
+                        ),
                         _drawerSubItem(
-                            'Expense History',
-                            FontAwesomeIcons.clockRotateLeft,
-                            () => Get.to(() => ShowExpense())),
+                          'Expense History',
+                          FontAwesomeIcons.clockRotateLeft,
+                          () => Get.to(() => ShowExpense()),
+                        ),
                       ],
                     ),
 
                     _drawerItem(
-                        icon: FontAwesomeIcons.moneyCheckDollar,
-                        title: 'Payroll',
-                        onTap: () => Get.to(() => const PayrollScreen())),
+                      icon: FontAwesomeIcons.moneyCheckDollar,
+                      title: 'Payroll',
+                      onTap: () => Get.to(() => const PayrollScreen()),
+                    ),
+
                     _drawerItem(
-                        icon: FontAwesomeIcons.graduationCap,
-                        title: 'Learning',
-                        onTap: () => Get.to(() => LearningScreen())),
+                      icon: FontAwesomeIcons.graduationCap,
+                      title: 'Learning',
+                      onTap: () => Get.to(() => LearningScreen()),
+                    ),
+
                     _drawerItem(
-                        icon: FontAwesomeIcons.circleInfo,
-                        title: 'About Us',
-                        onTap: () => Get.to(() => const AboutUs())),
+                      icon: FontAwesomeIcons.circleInfo,
+                      title: 'About Us',
+                      onTap: () => Get.to(() => const AboutUs()),
+                    ),
                   ],
                 ),
               ),
@@ -1261,30 +1290,43 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
-  Widget _drawerItem(
-      {required IconData icon,
-      required String title,
-      required VoidCallback onTap}) {
+  Widget _drawerItem({
+    required FaIconData icon,
+    required String title,
+    required VoidCallback onTap,
+  }) {
     return ListTile(
-      leading: Icon(icon, color: Colors.white70, size: 18),
-      title: Text(title,
-          style: const TextStyle(
-              color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500)),
-      trailing: const Icon(Icons.arrow_forward_ios_rounded,
-          size: 12, color: Colors.white30),
+      leading: FaIcon(
+        icon,
+        color: Colors.white70,
+        size: 18,
+      ),
+      title: Text(
+        title,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      trailing: const Icon(
+        Icons.arrow_forward_ios_rounded,
+        size: 12,
+        color: Colors.white30,
+      ),
       onTap: onTap,
       dense: true,
     );
   }
 
   Widget _drawerExpansion(
-      {required IconData icon,
+      {required FaIconData icon,
       required String title,
       required List<Widget> children}) {
     return Theme(
       data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
       child: ExpansionTile(
-        leading: Icon(icon, color: Colors.white70, size: 18),
+        leading: FaIcon(icon, color: Colors.white70, size: 18),
         title: Text(title,
             style: const TextStyle(
                 color: Colors.white,
@@ -1301,10 +1343,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     );
   }
 
-  Widget _drawerSubItem(String title, IconData icon, VoidCallback onTap) {
+  Widget _drawerSubItem(String title, FaIconData icon, VoidCallback onTap) {
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 40),
-      leading: Icon(icon, color: Colors.white38, size: 14),
+      leading: FaIcon(icon, color: Colors.white38, size: 14),
       title: Text(title,
           style: const TextStyle(color: Colors.white60, fontSize: 12)),
       trailing: const Icon(Icons.arrow_forward_ios_rounded,

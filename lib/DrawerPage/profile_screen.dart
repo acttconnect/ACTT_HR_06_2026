@@ -422,11 +422,11 @@ class _ProfileScreenState extends State<ProfileScreen>
           Colors.blue.shade400, () => Get.to(() => const UploadDocuments())),
       _TileData("Downloads", FontAwesomeIcons.download, Colors.blue.shade300,
           () => Get.to(() => const Downloads())),
-      _TileData("Help & Support", FontAwesomeIcons.questionCircle,
+      _TileData("Help & Support", FontAwesomeIcons.circleQuestion,
           const Color(0xFF29B6F6), () => Get.to(() => const SupportScreen())),
       _TileData(
         "Privacy Policy",
-        FontAwesomeIcons.shieldAlt,
+        FontAwesomeIcons.shield,
         Colors.blue.shade200,
         () async {
           try {
@@ -485,7 +485,7 @@ class _ProfileOption {
 
 class _TileData {
   final String title;
-  final IconData icon;
+  final dynamic icon;
   final Color color;
   final VoidCallback onTap;
   const _TileData(this.title, this.icon, this.color, this.onTap);
